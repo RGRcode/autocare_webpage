@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css"/>
+    <script src="main.js"></script>
 </head>
 <body>
     <header>
@@ -59,6 +60,31 @@
 
         <section id="booking">
             <h2>Rezerwacja wizyty</h2>
+            
+            <div class="booking-container">
+                <div class="calendar-wrapper">
+                    <div class="calendar-header">
+                        <button id="prev-month">&lt;</button>
+                        <h3 id="month-year-display">CZERWIEC 2026</h3>
+                        <button id="next-month">&gt;</button>
+                    </div>
+                    <div class="weekdays">
+                        <div>pn</div>
+                        <div>wt</div>
+                        <div>śr</div>
+                        <div>cz</div>
+                        <div>pt</div>
+                        <div>sb</div>
+                        <div>nd</div>
+                    </div>
+                    <div id="calendar-days" class="calendar-days"></div>
+                </div>
+                <div class="time-sloots-wrapper">
+                    <h3>Dostępne godziny</h3>
+                    <p id="selected-date-status">Wybierz dzien z kalendarza</p>
+                    <div id="slots-grid" class="slots-grid"></div>
+                </div>
+            </div>
         </section>
     </main>
     
