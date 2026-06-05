@@ -4,11 +4,14 @@ body{
     color:#fff;
     font-family: 'Inter', sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 
 
-#logo>img{
-    width:10%;
+#logo>a>img{
+    width:25%;
 }
 header>nav{
     background-color: #0000005d;
