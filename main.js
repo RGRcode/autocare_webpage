@@ -33,24 +33,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function updateStatusText() {
         let text = `<strong style="color: #d4af37;">Usługa:</strong> ${selectedService}<br>`;
-        
         if (selectedDate && selectedTime) {
-            text += `<strong>Termin:</strong> ${selectedDate} Czerwca 2026, godz. ${selectedTime}<br><br>`;
-            text += `<button id="confirm-booking-btn" style="
-                background-color: #d4af37; 
-                color: #000; 
-                border: none; 
-                padding: 12px 30px; 
-                font-size: 1rem; 
-                font-weight: 700; 
-                border-radius: 8px; 
-                cursor: pointer; 
-                width: 100%; 
-                text-transform: uppercase; 
-                letter-spacing: 1px;
-                transition: all 0.3s ease;">Umów wizytę</button>`;
+            text += `<strong>Termin:</strong> ${selectedDate} ${monthNames[selectedMonth].toLowerCase()} ${selectedYear}, godz. ${selectedTime}<br><br>`;
+            text += `<button id="confirm-booking-btn">Umów wizytę</button>`;
         } else if (selectedDate) {
-            text += `<strong>Termin:</strong> ${selectedDate} Czerwca 2026 (wybierz godzinę)`;
+            text += `<strong>Termin:</strong> ${selectedDate} ${monthNames[selectedMonth].toLowerCase()} ${selectedYear} (wybierz godzinę)`;
         } else {
             text += `<strong>Termin:</strong> Wybierz dzień z kalendarza`;
         }
@@ -60,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function(){
         const confirmBtn = document.getElementById("confirm-booking-btn");
         if (confirmBtn) {
             confirmBtn.addEventListener("click", function() {
-                alert(`Pomyślnie zarezerwowano!\n\nUsługa: ${selectedService}\nData: ${selectedDate} Czerwca 2026\nGodzina: ${selectedTime}`);
+                alert(`Pomyślnie zarezerwowano!\n\nUsługa: ${selectedService}\nData: ${selectedDate} ${monthNames[selectedMonth]} ${selectedYear}\nGodzina: ${selectedTime}`);
             });
         }
     }
@@ -109,53 +96,22 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     function createScrollTopButton() {
-        const btn = document.createElement("button");
-        btn.innerHTML = "&#8593;"; 
-        btn.setAttribute("style", `
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: #d4af37;
-            color: #000;
-            border: none;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 2000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            transition: all 0.3s ease;
-        `);
+            const btn = document.createElement("button");
+            btn.innerHTML = "&#8593;"; 
+            btn.classList.add("scroll-top-btn");
 
-        btn.addEventListener("mouseenter", () => {
-            btn.style.backgroundColor = "#fff";
-            btn.style.transform = "translateY(-3px)";
-        });
-        btn.addEventListener("mouseleave", () => {
-            btn.style.backgroundColor = "#d4af37";
-            btn.style.transform = "translateY(0)";
-        });
-
-        btn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-
-        document.body.appendChild(btn);
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                btn.style.display = "flex";
-            } else {
-                btn.style.display = "none";
-            }
-        });
-    }
-    
+            btn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+            document.body.appendChild(btn);
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 300) {
+                    btn.classList.add("show");
+                } else {
+                    btn.classList.remove("show");
+                }
+            });
+        }
     updateStatusText();
     generateCalendar();
     createScrollTopButton();
