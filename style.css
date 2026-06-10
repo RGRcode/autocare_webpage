@@ -10,6 +10,76 @@ html {
 }
 
 
+@media(max-width:768px) {
+    header>nav {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
+
+    .welcome-content {
+        margin-top: 160px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .welcome-content h1 {
+        font-size: 2rem;
+    }
+
+    #services,
+    #booking {
+        padding: 60px 5%;
+    }
+
+    #services h2,
+    #booking h2 {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+
+    .services-rectangle {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .time-slots-wrapper {
+        padding:25px;
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .calendar-day {
+        font-size: 0.85rem;
+        border-radius: 6px;
+    }
+
+    #contact {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    #contact>nav>ul {
+        justify-content: center;
+    }
+
+}
 
 #logo>a>img {
     width: 25%;
@@ -354,77 +424,6 @@ footer {
 
 #contact>nav>ul {
     padding: 0px;
-}
-
-
-@media(max-width:768px) {
-    header>nav {
-        flex-direction: column;
-        padding: 15px 20px;
-        gap: 15px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        padding: 0;
-    }
-
-    welcome-content {
-        margin-top: 160px;
-        align-items: center;
-        text-align: center;
-    }
-
-    .welcome-content h1 {
-        font-size: 2rem;
-    }
-
-    #services,
-    #booking {
-        padding: 60px 5%;
-    }
-
-    #services h2,
-    #booking h2 {
-        font-size: 1.8rem;
-        margin-bottom: 40px;
-    }
-
-    .services-rectangle {
-        grid-template-columns: 1fr;
-    }
-
-    .booking-container {
-        grid-template-columns: 1fr;
-        padding: 20px;
-        gap: 30px;
-    }
-
-    .time-sloots-wrapper {
-        border-left: none;
-        padding-left: 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .calendar-day {
-        font-size: 0.85rem;
-        border-radius: 6px;
-    }
-
-    #contact {
-        width: 90%;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 40px;
-    }
-
-    #contact>nav>ul {
-        justify-content: center;
-    }
-
 }
 
 .scroll-top-btn {

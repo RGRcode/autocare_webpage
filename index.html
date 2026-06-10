@@ -9,10 +9,8 @@
     <meta name="author" content="Cosmetic Car">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css"/>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 </head>
 <body>
     <header>
@@ -25,6 +23,8 @@
                 <li><a href="#booking">UMÓW</a></li>
             </ul>
         </nav>
+    </header>
+    <main>
         <section class="welcome" id="start">
             <div class="welcome-content">
                 <h1>ZAREZERWUJ AUTODETAILING SWOJEGO SAMOCHODU ONLINE</h1>
@@ -32,8 +32,6 @@
                 <a href="#booking">UMÓW WIZYTĘ</a>
             </div>
         </section>
-    </header>
-    <main>
         <section id="services">
             <h2>Wybierz usługę</h2>
             <div class="services-rectangle">
@@ -64,9 +62,9 @@
             <div class="booking-container">
                 <div class="calendar-wrapper">
                     <div class="calendar-header">
-                        <button id="prev-month">&lt;</button>
+                        <button id="prev-month" aria-label="Poprzedni miesiąc">&lt;</button>
                         <h3 id="month-year-display">CZERWIEC 2026</h3>
-                        <button id="next-month">&gt;</button>
+                        <button id="next-month" aria-label="Następny miesiąc">&gt;</button>
                     </div>
                     <div class="weekdays">
                         <div>pn</div>
@@ -79,7 +77,7 @@
                     </div>
                     <div id="calendar-days" class="calendar-days"></div>
                 </div>
-                <div class="time-sloots-wrapper">
+                <div class="time-slots-wrapper">
                     <h3>Dostępne godziny</h3>
                     <p id="selected-date-status">Wybierz dzien z kalendarza</p>
                     <div id="slots-grid" class="slots-grid"></div>
@@ -89,15 +87,15 @@
     </main>
     
     <footer>
+                <h2>Kontakt</h2>
         <div id="contact">
             <address>
-                <h2>Kontakt</h2>
                 <p>+48 123 456 789</p>
                 <p>00-000 Warszawa</p>
                 <p>ul.Polna 3</p>
             </address>
             <nav id="social-media">
-                <h2>Sociale</h2>
+                Sociale
                 <ul>
                     <li>FB</li>
                     <li>IG</li>
@@ -105,7 +103,7 @@
                 </ul>
             </nav>
         </div>
-        &copy; 2026 Comsetic Car
+        &copy; 2026 Cosmetic Car
     </footer>
 
 
